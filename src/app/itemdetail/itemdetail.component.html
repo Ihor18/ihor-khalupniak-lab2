@@ -1,8 +1,8 @@
-<div style="background-color: " class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
   fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="5px">
 
   <div fxFlex="50">
-    <mat-card *ngIf="item">
+    <mat-card *ngIf="item" style="background-color:#F44336">
       <mat-card-header>
         <mat-card-title>
           <h2 matLine>{{item.name |uppercase}}</h2>
@@ -19,14 +19,14 @@
     </mat-card>
   </div>
 
-  <div fxFlex="50">
+  <div fxFlex="50" >
     <mat-list *ngIf="item">
       <mat-list-item fxLayoutAlign="center">
-        <h3>Comments</h3>
+        <h3 class="text">Comment</h3>
       </mat-list-item>
-      <mat-list-item>
-        <mat-list class="comment-item">
-          <mat-list-item *ngFor="let comment of item.comments">
+      <mat-list-item >
+        <mat-list >
+          <mat-list-item style="color: black" *ngFor="let comment of item.comments">
             <p matLine>{{comment.comment}}</p>
             <p matLine>{{comment.rating}} Stars</p>
             <p matLine>-- {{comment.author}} {{comment.date | date}}</p>
