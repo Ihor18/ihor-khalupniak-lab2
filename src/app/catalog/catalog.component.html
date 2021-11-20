@@ -1,0 +1,23 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+
+  <div fxFlex fxLayoutAlign="center">
+    <div>
+      <h1>{{titleCatalog}}</h1>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <mat-grid-list cols="3" rowHeight="200px">
+      <mat-grid-tile *ngFor="let item of items" (click)="onSelect(item)">
+        <img height="200px " src={{item.image}} alt={{item.name}}>
+        <mat-grid-tile-footer>
+          <h2 matLine>{{item.name | uppercase}}</h2>
+          <p matLine>{{item.description}}</p>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <app-itemdetail [item]="selectedItem"></app-itemdetail>
+
+</div>
